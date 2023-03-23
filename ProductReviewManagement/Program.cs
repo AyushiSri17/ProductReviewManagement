@@ -27,14 +27,18 @@ namespace ProductReviewManagement
                 new ProductReview() {ProductId=5, UserId=11, IsLike=true, Review="Good", Rating=85},
                 new ProductReview() {ProductId=8, UserId=12, IsLike=true, Review="Nice", Rating=51}
             };
-            Console.WriteLine("Please Select options");
-            Console.WriteLine("1. Display all data");
+            Console.WriteLine("Please Select option to perform action");
+            Console.WriteLine("1. Display all data \n2. Top 3 records with high ratings");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
                 case 1:
                     Console.WriteLine("Displaying all review\n");
                     DisplayProductReviews(list);
+                    break;
+                case 2:
+                    Console.WriteLine("Top three Records are");
+                    ProductReviewManagement.RetreiveTop3Records(list);
                     break;
                 default:
                     Console.WriteLine("Please choose correct option");
