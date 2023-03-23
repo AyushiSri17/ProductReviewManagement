@@ -31,7 +31,7 @@ namespace ProductReviewManagement
             };
             Console.WriteLine("Please Select option to perform action");
             Console.WriteLine("1. Display all data \n2. Top 3 records with high ratings \n3. Feaching Records " +
-                "based on Rating and Product Id");
+                "based on Rating and Product Id \n4. Find count of review present on each product id");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -46,6 +46,10 @@ namespace ProductReviewManagement
                 case 3:
                     Console.WriteLine("Fetching Records based on Rating and Product Id");
                     ProductReviewManagement.FetchRecordsBasedOnRatingAndProductId(list);
+                    break;
+                case 4:
+                    Console.WriteLine("Count of review present on each product id");
+                    ProductReviewManagement.FindingEachCountOfProductId(list);
                     break;
                 default:
                     Console.WriteLine("Please choose correct option");
