@@ -32,7 +32,7 @@ namespace ProductReviewManagement
             Console.WriteLine("Please Select option to perform action");
             Console.WriteLine("1. Display all data \n2. Top 3 records with high ratings \n3. Feaching Records " +
                 "based on Rating and Product Id \n4. Find count of review present on each product id \n" +
-                "5. Display only ProductId and Review of all records");
+                "5. Display only ProductId and Review of all records \n6. Skip Top 5 records");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -55,6 +55,10 @@ namespace ProductReviewManagement
                 case 5:
                     Console.WriteLine("Displaying ProductId and Review of all records");
                     ProductReviewManagement.DisplayProductIdAndReview(list);
+                    break;
+                case 6:
+                    Console.WriteLine("Skip Top 5 records");
+                    ProductReviewManagement.SkipTop5Records(list);
                     break;
                 default:
                     Console.WriteLine("Please choose correct option");
