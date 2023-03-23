@@ -25,10 +25,13 @@ namespace ProductReviewManagement
                 new ProductReview() {ProductId=7, UserId=9, IsLike=true, Review ="Average", Rating=65},
                 new ProductReview() {ProductId=3, UserId=10, IsLike=false, Review="Bad", Rating=15},
                 new ProductReview() {ProductId=5, UserId=11, IsLike=true, Review="Good", Rating=85},
-                new ProductReview() {ProductId=8, UserId=12, IsLike=true, Review="Nice", Rating=51}
+                new ProductReview() {ProductId=8, UserId=12, IsLike=true, Review="Nice", Rating=51},
+                 new ProductReview() {ProductId=4, UserId=10, IsLike=false, Review="Bad", Rating=2},
+                new ProductReview() {ProductId=9, UserId=13, IsLike=true, Review="Good", Rating=95},
             };
             Console.WriteLine("Please Select option to perform action");
-            Console.WriteLine("1. Display all data \n2. Top 3 records with high ratings");
+            Console.WriteLine("1. Display all data \n2. Top 3 records with high ratings \n3. Feaching Records " +
+                "based on Rating and Product Id");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -39,6 +42,10 @@ namespace ProductReviewManagement
                 case 2:
                     Console.WriteLine("Top three Records are");
                     ProductReviewManagement.RetreiveTop3Records(list);
+                    break;
+                case 3:
+                    Console.WriteLine("Fetching Records based on Rating and Product Id");
+                    ProductReviewManagement.FetchRecordsBasedOnRatingAndProductId(list);
                     break;
                 default:
                     Console.WriteLine("Please choose correct option");

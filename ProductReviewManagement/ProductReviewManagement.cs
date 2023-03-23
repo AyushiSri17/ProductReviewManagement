@@ -8,6 +8,7 @@ namespace ProductReviewManagement
 {
     public class ProductReviewManagement
     {
+        //-----------------------UC-2---------------------------
         public static void RetreiveTop3Records(List<ProductReview> list)
         {
             Console.WriteLine("LINQ method Syntax\n");
@@ -18,6 +19,12 @@ namespace ProductReviewManagement
             //Program.DisplayProductReviews(top3);
             Console.WriteLine("LINQ Query Syntax\n");
             List<ProductReview> result = (from product in list orderby product.Rating descending select product).Take(3).ToList();
+            Program.DisplayProductReviews(result);
+        }
+        //-----------------------UC-3---------------------------
+        public static void FetchRecordsBasedOnRatingAndProductId(List<ProductReview> list)
+        {
+            List<ProductReview> result = list.Where(p => p.Rating > 3 && (p.ProductId == 1 || p.ProductId == 4 || p.ProductId == 9)).ToList();
             Program.DisplayProductReviews(result);
         }
     }
